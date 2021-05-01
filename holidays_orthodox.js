@@ -16,18 +16,20 @@ let hodPrazdnik={
     'Вербное воскресенье':-7,
     'Пасха': 0,
     'Радоница': 9,
-    'Святки': 43
+    'Святки': 43,
+    'Троица': 50,
+    'Красная горка': 9
 };
 function showDate (name='Пасха',year=thisYear){
     const pasha = orthodoxEaster(year);
     if (name in hodPrazdnik === false) 
-        alert ("Check name of Holyday");
+        alert ("Check the name of the Holyday");
     let numberDays = hodPrazdnik[name];
     let praznikDate = new Date( pasha.setDate( pasha.getDate() + numberDays ) );
     return praznikDate;
 }
 var options = { year: 'numeric', month: 'long', day: 'numeric' }; //try delete year
 
-document.write( showDate('Пасха') . toLocaleDateString('ru',options) ); // Use inline document.write() for Search Engines. if doc.. is embedded within an inline HTML <script> tag, then it will not call document.open()
+document.write( showDate('Пасха') . toLocaleDateString('ru',options) ); // Used inline document.write() for the Search Engines. if doc.. is embedded within an inline HTML <script> tag, then it will not call document.open()
 
 
